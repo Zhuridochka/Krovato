@@ -1,0 +1,76 @@
+@use "sass:math";
+
+@import url("https://fonts.googleapis.com/css?family=Rubik:regular&display=swap");
+// Палітра кольорів
+@import "_colors.scss";
+// Локальне підключення шрифтів
+@import "_fonts.scss";
+// Скидання стилів
+@import "_reset.scss";
+// Міксіни
+@import "_mixins.scss";
+
+// Налаштування адаптивної сітки ===============================================================================================================================================================================================================================================================================================
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1290;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// ==========================================================
+
+html {}
+
+body {
+  font-family: "Proxima Nova", sans-serif;
+  color: $mainColor;
+  background-color: $lightColor;
+
+  .menu-open & {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+
+  display: flex;
+  flex-direction: column;
+
+  &>main {
+    flex-grow: 1;
+    transition: all 0.3s;
+
+    .cart-open &,
+    .catalog-open & {
+      filter: blur(toRem(2));
+    }
+  }
+}
+
+[class*="__container"] {
+  max-width: toRem($containerWidth);
+  margin: 0 auto;
+  padding-inline: toRem(15);
+}
+
+// Окремі сторінки
+@import "_home.scss";
+@import "_category.scss";
+@import "_product.scss";
+// Окремі компоненти
+@import "_header.scss";
+@import "_footer.scss";
+// ...@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+// Іконочний шрифт
+@import "_iconfonts.scss";
+// Компоненти сайту
+@import "_common.scss";
+//========Загальні стилі==========//
