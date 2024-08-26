@@ -250,6 +250,22 @@ function windowLoaded() {
       nextEl: ".main-slider-product__arrow--next",
       prevEl: ".main-slider-product__arrow--prev",
     },
+
+    pagination: {
+      el: ".slider-product__pagination",
+      clickable: true,
+      dynamicBullets: true, // Опціонально, для більш динамічного вигляду булетів
+    },
+
+    breakpoints: {
+      670: {
+        thumbs: false, // Вимкнути thumbnails на екранах менше 670px
+        pagination: {
+          el: ".slider-product__pagination",
+          clickable: true,
+        },
+      },
+    },
   });
 
   //* З'єднання двух слайдерів другий варіант
