@@ -238,6 +238,7 @@ function windowLoaded() {
   });
 
   const swiperProductMain = new Swiper(".main-slider-product", {
+    //* З'єднання двух слайдерів перший варіант
     thumbs: {
       swiper: swiperProductPreviews,
     },
@@ -251,7 +252,7 @@ function windowLoaded() {
     },
   });
 
-  //* З'єднання двух слайдерів
+  //* З'єднання двух слайдерів другий варіант
   // swiperProductMain.controller.control = swiperProductPreviews;
   // swiperProductPreviews.controller.control = swiperProductMain;
 

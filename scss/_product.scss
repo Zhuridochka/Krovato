@@ -667,7 +667,7 @@
     flex-shrink: 0;
 
     @media (max-width: toEm(1220)) {
-      flex-grow: 1;
+      flex-shrink: 1;
     }
   }
 }
@@ -708,7 +708,7 @@
   // .characteristics-product__title
   &__title {
     &:not(:last-child) {
-      margin-block-end: toRem(30);
+      @include adaptiveValue("margin-block-end", 30, 10);
     }
   }
 
@@ -729,7 +729,6 @@
     position: relative;
     background-color: #fff;
     border-radius: toRem(8);
-    overflow: hidden;
 
     &:not(:last-child) {
       margin-block-end: toRem(5);
@@ -744,24 +743,25 @@
       inline-size: 100%;
       border: toRem(1) dashed $greyColor;
       overflow: hidden;
+      // z-index: 2;
     }
   }
 
   // .characteristics-product__td
   &__td {
     position: relative;
-    padding: toRem(15) toRem(10);
+    padding: toRem(15) toRem(0);
     overflow: hidden;
 
     &:first-child {
       text-align: left;
       flex-grow: 1;
-      white-space: nowrap;
     }
 
     &:last-child {
       text-align: right;
-      white-space: nowrap;
+      flex-shrink: 0;
+      // white-space: nowrap;
 
       &::after {
         content: "";
@@ -769,11 +769,12 @@
         background-color: #fff;
         inline-size: 100%;
         block-size: 100%;
+        z-index: 1;
       }
     }
 
     span {
-      padding-inline: toRem(10);
+      padding-inline: toRem(7);
       background-color: #fff;
       position: relative;
     }
@@ -784,9 +785,8 @@
   display: grid;
   border-radius: toRem(8);
   background-color: #fff;
-
   box-shadow: 0 0 toRem(15) 0 rgba(0, 0, 0, 0.05);
-  padding: toRem(30);
+  @include adaptiveValue("padding", 30, 12);
 
   // .reviews-product__title
   &__title {
@@ -816,7 +816,12 @@
   }
 
   // .reviews-product__rating
-  &__rating {}
+  &__rating {
+    @media (max-width: toEm(400)) {
+      flex-direction: column;
+    }
+
+  }
 
   // .reviews-product__items
   &__items {
@@ -855,6 +860,11 @@
 
     &:not(:last-child) {
       margin-block-end: toRem(20);
+    }
+
+    @media (max-width: toEm(480)) {
+      flex-direction: column;
+      align-items: start;
     }
   }
 
@@ -1003,15 +1013,13 @@
 }
 
 .header-answers {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   column-gap: toRem(20);
   row-gap: toRem(10);
 
-  @media (max-width: toEm(500)) {
-    flex-direction: column;
-  }
+  @media (max-width: toEm(420)) {}
 
   // .header-answers__user
   &__user {}
@@ -1079,7 +1087,7 @@
 .answers-form-review {
   border-radius: toRem(8);
   background-color: $lightColor;
-  padding: toRem(30);
+  @include adaptiveValue("padding", 30, 12);
 
   // .answers-form-review__text
   &__text {
@@ -1108,11 +1116,15 @@
   // .answers-form-review__row
   &__row {
     display: flex;
-    gap: toRem(30);
     flex-wrap: wrap;
+    @include adaptiveValue("gap", 30, 15);
 
     &:not(:last-child) {
       margin-block-end: toRem(30);
+
+      @media (max-width: toEm(480)) {
+        margin-block-end: toRem(15);
+      }
     }
   }
 
@@ -1124,6 +1136,12 @@
 
     &:last-child {
       flex-basis: 100%;
+      flex-shrink: 1;
+    }
+
+    @media (max-width: toEm(480)) {
+      flex-basis: 100%;
+      flex-shrink: 1;
     }
   }
 
