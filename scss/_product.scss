@@ -277,10 +277,23 @@
   &__actions {}
 
   // .body-product__buy-click
-  &__buy-click {}
+  &__buy-click {
+    &:not(:last-child) {
+      margin-block-end: toRem(30);
+    }
+  }
 
   // .body-product__inner
   &__inner {}
+
+  // .body-product__social
+  &__social {
+    display: none;
+
+    // @media (max-width: toEm(760)) {
+    //   display: block;
+    // }
+  }
 }
 
 .actions-product {
@@ -698,6 +711,8 @@
       flex-shrink: 1;
     }
   }
+
+
 }
 
 .description-product {
