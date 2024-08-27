@@ -254,7 +254,11 @@ function windowLoaded() {
     pagination: {
       el: ".slider-product__pagination",
       clickable: true,
-      dynamicBullets: true, // Опціонально, для більш динамічного вигляду булетів
+      //dynamicBullets: true, // *Опціонально, для більш динамічного вигляду булетів
+
+      renderBullet: function (index, className) {
+        return '<button type="button" class="' + className + '"></button>';
+      },
     },
 
     breakpoints: {

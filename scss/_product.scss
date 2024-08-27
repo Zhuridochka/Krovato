@@ -74,7 +74,6 @@
 }
 
 .slider-product {
-  position: relative;
 
   // .slider-product__main
   &__main {
@@ -88,25 +87,27 @@
     display: none;
 
     @media (max-width: toEm(670)) {
-      display: block;
-      margin-right: toRem(10);
+      display: flex;
       position: relative;
-      inset-block-start: toRem(20);
+      inset-inline-start: 0;
+      inline-size: 100%;
+      z-index: 2;
+      gap: toRem(10);
+      justify-content: center;
     }
   }
 
   .swiper-pagination-bullet {
-    inline-size: toRem(20);
-    block-size: toRem(20);
+    inline-size: toRem(15);
+    block-size: toRem(15);
     background-color: #fff;
     border-radius: 50%;
     border: toRem(2) solid $greyLightColor;
-    // margin: toRem(0) toRem(15);
-    margin-inline-start: toRem(10);
+    flex-shrink: 0;
 
     &-active {
       background-color: $yellowColor;
-      border: toRem(4) solid #fff;
+      border: toRem(3) solid #fff;
     }
   }
 
@@ -219,6 +220,19 @@
     object-fit: cover;
     border-radius: toRem(8);
   }
+}
+
+// Перезаписуємо вбудовані стилі Slider
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: toRem(20);
+  top: auto;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+  opacity: 1;
 }
 
 .body-product {
