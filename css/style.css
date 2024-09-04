@@ -835,7 +835,6 @@ body {
   font-weight: 600;
   line-height: 1.4;
   /* 28/20 */
-  text-align: center;
 }
 
 @media (min-width: 82.5em) {
@@ -3008,6 +3007,7 @@ body {
 }
 
 .header {
+  position: sticky;
   inset-block-start: 0;
   inset-inline-start: 0;
   z-index: 50;
@@ -3780,7 +3780,6 @@ body {
           padding-inline-start: 0.9375rem;
   -webkit-padding-end: 3.125rem;
           padding-inline-end: 3.125rem;
-  border-radius: 0.5rem;
 }
 .search-header__input::-webkit-input-placeholder {
   color: #b1b1b1;

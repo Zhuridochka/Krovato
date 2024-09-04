@@ -496,6 +496,7 @@ function windowLoaded() {
       document.documentElement.classList.remove("catalog-open");
     }
 
+    //! Додавання класу в html
     if (targetElement.closest(".search-header__open")) {
       document.documentElement.classList.toggle("search-open");
     } else if (!targetElement.closest(".search-header__body")) {
