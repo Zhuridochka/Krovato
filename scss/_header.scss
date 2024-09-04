@@ -2,7 +2,12 @@
   position: sticky;
   inset-block-start: 0;
   inset-inline-start: 0;
+  width: 100%;
   z-index: 50;
+
+  @media (min-width: 991.98px) and (max-width: 1920px) {
+    inset-block-start: toRem(-140);
+  }
 
   // Підложка для затемнення єкрану при натсканні
   // на кнопки і появі "випадашок"
@@ -32,7 +37,11 @@
   &__top {
     background-color: $lightColor;
     position: relative;
-    z-index: 6;
+    z-index: 11;
+
+    @media (max-width:toEm(991.98)) {
+      z-index: 6;
+    }
 
     @media (max-width: toEm(991.98)) {
       position: fixed;
@@ -147,7 +156,6 @@
 .actions-top-header {
   display: flex;
   align-items: center;
-  // flex-wrap: wrap;
   column-gap: toRem(20);
   row-gap: toRem(10);
 
@@ -180,7 +188,7 @@
     align-items: center;
 
     &::before {
-      width: toRem(24);
+      inline-size: toRem(24);
       height: toRem(24);
       font-size: toRem(11);
       display: flex;
@@ -201,7 +209,7 @@
   &__list {
     position: absolute;
     top: 100%;
-    width: 100%;
+    inline-size: 100%;
     padding-block: toRem(10);
     opacity: 0;
     visibility: hidden;
@@ -213,7 +221,7 @@
       box-shadow: 0 0 toRem(15) 0 rgba(0, 0, 0, 0.12);
       border-radius: toRem(8);
       position: absolute;
-      width: calc(100% + toRem(10));
+      inline-size: calc(100% + toRem(10));
       height: calc(100% + toRem(34));
       top: toRem(-34);
       padding-block-start: toRem(34);
@@ -333,7 +341,7 @@
 //====Body-header==========
 .body-header {
   position: relative;
-  z-index: 5;
+  z-index: 50;
   background-color: #fff;
 
   @media (max-width: toEm(991.98)) {
@@ -342,6 +350,14 @@
     .menu-open & {
       border-bottom: toRem(2) solid #f8f8f8;
     }
+  }
+
+  @media (min-width: 991.98px) and (max-width: 1920px) {
+    position: sticky;
+    inset-block-start: toRem(60);
+    inline-size: 100%;
+    z-index: 10;
+    background-color: red;
   }
 
   // .body-header__container
