@@ -546,6 +546,22 @@ function windowLoaded() {
     }
   };
 
+  {
+    const headerTop = document.querySelector(".header__top");
+    const headerTopHeight = headerTop.offsetHeight;
+
+    console.log(`Висота header__top: ` + headerTopHeight + `px`);
+
+    const headerBody = document.querySelector(".header__body");
+
+    if (window.innerWidth > 991.98) {
+      headerBody.style.insetBlockStart = `${headerTopHeight}px`;
+    } else {
+      headerBody.style.insetBlockStart = "";
+    }
+  }
+  updateBodyTop();
+
   document.addEventListener("click", documentActions);
   document.addEventListener("keydown", keypressActions);
 }

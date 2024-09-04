@@ -3350,8 +3350,9 @@ body {
 }
 
 .body-header {
-  position: relative;
-  z-index: 50;
+  position: sticky;
+  inline-size: 100%;
+  z-index: 10;
   background-color: #fff;
 }
 @media (max-width: 61.99875em) {
@@ -3362,12 +3363,11 @@ body {
     border-bottom: 0.125rem solid #f8f8f8;
   }
 }
-@media (min-width: 991.98px) {
+@media (max-width: 991.98px) {
   .body-header {
-    position: sticky;
-    inset-block-start: 3.75rem;
-    inline-size: 100%;
-    z-index: 10;
+    position: relative;
+    z-index: 50;
+    background-color: #fff;
   }
 }
 .body-header__container {
