@@ -3362,13 +3362,12 @@ body {
     border-bottom: 0.125rem solid #f8f8f8;
   }
 }
-@media (min-width: 991.98px) and (max-width: 1920px) {
+@media (min-width: 991.98px) {
   .body-header {
     position: sticky;
     inset-block-start: 3.75rem;
     inline-size: 100%;
     z-index: 10;
-    background-color: red;
   }
 }
 .body-header__container {

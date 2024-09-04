@@ -352,12 +352,11 @@
     }
   }
 
-  @media (min-width: 991.98px) and (max-width: 1920px) {
+  @media (min-width: 991.98px) {
     position: sticky;
     inset-block-start: toRem(60);
     inline-size: 100%;
     z-index: 10;
-    background-color: red;
   }
 
   // .body-header__container
