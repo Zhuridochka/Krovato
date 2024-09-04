@@ -546,7 +546,7 @@ function windowLoaded() {
     }
   };
 
-  {
+  function updateBodyTop() {
     const headerTop = document.querySelector(".header__top");
     const headerTopHeight = headerTop.offsetHeight;
 
